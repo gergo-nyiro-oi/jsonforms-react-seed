@@ -26,7 +26,83 @@
     },
     "recurrence_interval": {
       "type": "integer"
-    }
+    },
+    "union_field": {
+        "anyOf": [
+            {
+                "type": "object",
+                "description": "SSS",
+                "title": "sss-title",
+                "properties": {
+                    "type": {"const": "sss"},
+                    "field": {"type": "string"}
+                }
+            },
+            {
+                "type": "object",
+                "description": "III",
+                "title": "iii-title",
+                "properties": {
+                    "type": {"const": "iii"},
+                    "field": {"type": "integer"}
+                }
+            }
+        ],
+        "discriminator": {
+            "mapping": {
+                "sss": {
+                    "type": "object",
+                    "properties": {
+                        "type": {"type": "string"},
+                        "field": {"type": "string"}
+                    }
+                },
+                "iii": {
+                    "type": "object",
+                    "properties": {
+                        "type": {"type": "string"},
+                        "field": {"type": "integer"}
+                    }
+                }
+            },
+            "propertyName": "type"
+        }
   },
-  "required": ["name", "due_date"]
+  "array_field": {
+      "type": "array",
+      "items": {
+          "type": "object",
+          "properties": {
+              "a": {"type": "integer"},
+              "b": {"type": "string"}
+          }
+      }
+  },
+  "union_array_field": {
+      "type": "array",
+      "items": {
+        "anyOf": [
+            {
+                "type": "object",
+                "description": "SSS",
+                "title": "sss-title",
+                "properties": {
+                    "type": {"const": "sss"},
+                    "field": {"type": "string"}
+                }
+            },
+            {
+                "type": "object",
+                "description": "III",
+                "title": "iii-title",
+                "properties": {
+                    "type": {"const": "iii"},
+                    "field": {"type": "integer"}
+                }
+            }
+        ]
+      }
+  }
+  },
+  "required": ["name", "due_date", "union_field"]
 }

@@ -50,6 +50,36 @@
       "options": {
         "multi": true
       }
+    },
+    {
+      "type": "HorizontalLayout",
+      "elements": [
+        {
+          "type": "Control",
+          "label": "Union",
+          "scope": "#/properties/union_field"
+        }
+      ]
+    },
+    {
+      "type": "HorizontalLayout",
+      "elements": [
+        {
+          "type": "Control",
+          "label": "Array",
+          "scope": "#/properties/array_field"
+        }
+      ]
+    },
+    {
+      "type": "HorizontalLayout",
+      "elements": [
+        {
+          "type": "Control",
+          "label": "Union Array",
+          "scope": "#/properties/union_array_field"
+        }
+      ]
     }
   ]
 }
